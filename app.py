@@ -11,7 +11,7 @@ import matplotlib.pyplot as plt
 from sklearn.datasets import make_blobs
 
 #load model
-with open('kmean_model.pkl','rb') as f:
+with open('kmeans_model.pkl','rb') as f:
     loaded_model = pickle.load(f)
     
     
