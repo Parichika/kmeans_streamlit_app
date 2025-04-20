@@ -13,23 +13,20 @@ from sklearn.datasets import make_blobs
 #load model
 with open('kmeans_model.pkl','rb') as f:
     loaded_model = pickle.load(f)
-    
-    
-#set the title
-st.title("K-Means Clustering Visualizer by Parichika Phumikakrak")
-
 
 #set the page config
-st.set_page_config(page_title = "K-Means Clustering", layout = "centered")
+st.set_page_config(page_title="k-Means Clustering App",layout="centered")
 
+st.title("k-Means Clustering Visualizer")
+
+st.subheader("Example Data for Visualization")
+st.markdown("This demo uses example data (2D) to illustrate clustering results.")
 
 #load dataset
-X, y = make_blobs(n_samples=300, centers=loaded_model.n_clusters, cluster_std=0.60, random_state=0)
-
+X, _ =make_blobs(n_samples=300, centers=loaded_model.n_clusters, cluster_std=0.60, random_state=0)
 
 #Predict using the loaded model
 y_kmeans = loaded_model.predict(X)
-
 
 #plotting
 fig, ax = plt.subplots()
